@@ -8,6 +8,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
+                bat 'yarn config set network-timeout 600000'
                 bat './gradlew assemble' // For Windows
             }
         }
